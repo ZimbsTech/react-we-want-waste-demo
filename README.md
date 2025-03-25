@@ -5,7 +5,7 @@ This project is a redesign of the skip selection page for WeWantWaste.co.uk, foc
 ## Live Demo
 
 You can view the live demo at 
-https://codesandbox.io/p/github/navinbhuva1999/skip-services-task/main?import=true&workspaceId=ws_62LMSWpRALvpVHoBvyosL4
+https://codesandbox.io/p/github/ZimbsTech/react-we-want-waste-demo/master?import=true
 
 ## Project Overview
 
