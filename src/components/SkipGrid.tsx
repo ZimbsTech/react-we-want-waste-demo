@@ -5,17 +5,20 @@ import { Skip } from '../types';
 import CircleIcon from '@mui/icons-material/Circle';
 
 interface SkipGridProps {
-  skips: Skip[];
-  selectedSkip: Skip | null;
+  skips: Skip[]; 
+  selectedSkip: Skip | null; 
   onSelectSkip: (skip: Skip) => void;
 }
 
+// SkipGrid component that displays skips in a grid format
 const SkipGrid: React.FC<SkipGridProps> = ({ skips, selectedSkip, onSelectSkip }) => {
   const theme = useTheme();
   
+  // Filter skips based on their placement type
   const roadPlacementSkips = skips.filter(skip => skip.allowed_on_road);
   const privatePlacementSkips = skips.filter(skip => !skip.allowed_on_road);
 
+  // If no skips are available, display a message
   if (skips.length === 0) {
     return (
       <Box 
@@ -37,6 +40,7 @@ const SkipGrid: React.FC<SkipGridProps> = ({ skips, selectedSkip, onSelectSkip }
     );
   }
 
+  // If there are skips available, display them in a grid
   return (
     <Box>
       {roadPlacementSkips.length > 0 && (

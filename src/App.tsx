@@ -3,11 +3,13 @@ import { ThemeProvider, CssBaseline, Box, GlobalStyles, createTheme, PaletteMode
 import Header from './components/Header';
 import SkipSelection from './pages/SkipSelection';
 
+// Create a context for color mode 
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
   mode: 'dark' as PaletteMode
 });
 
+// Main App component
 function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
   
@@ -21,6 +23,7 @@ function App() {
     [mode],
   );
 
+  // Theme
   const theme = useMemo(
     () =>
       createTheme({
@@ -41,14 +44,14 @@ function App() {
           MuiButton: {
             styleOverrides: {
               root: {
-                textTransform: 'none',
+                textTransform: 'none', 
               },
             },
           },
           MuiCard: {
             styleOverrides: {
               root: {
-                borderRadius: 12,
+                borderRadius: 12, 
               },
             },
           },
@@ -73,7 +76,7 @@ function App() {
       background: '#555',
     },
     'html, body': {
-      scrollBehavior: 'smooth',
+      scrollBehavior: 'smooth', 
     },
   };
 
@@ -84,15 +87,15 @@ function App() {
         <GlobalStyles styles={globalStyles} />
         <Box
           sx={{
-            minHeight: '100vh',
+            minHeight: '100vh', 
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: theme.palette.background.default,
           }}
         >
-          <Header />
+          <Header /> {/* Header component */}
           <Box component="main" sx={{ flexGrow: 1 }}>
-            <SkipSelection />
+            <SkipSelection /> {/* Skip selection component */}
           </Box>
         </Box>
       </ThemeProvider>

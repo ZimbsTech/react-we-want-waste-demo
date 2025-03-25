@@ -9,6 +9,7 @@ const ThemeToggle: React.FC = () => {
   const colorMode = useContext(ColorModeContext);
   
   return (
+    // Tooltip component 
     <Tooltip title={theme.palette.mode === 'dark' ? "Switch to light mode" : "Switch to dark mode"}>
       <IconButton 
         onClick={colorMode.toggleColorMode}

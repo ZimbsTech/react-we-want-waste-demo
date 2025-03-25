@@ -75,3 +75,37 @@ npm start
 ## License
 
 MIT
+
+## Environment Variables
+
+The application uses environment variables for configuration.
+
+```
+.env
+```
+
+## Code Standards
+
+This project follows these coding standards:
+
+1. **Constants**: Configuration values are stored in the `src/constants` directory
+2. **Comments**: All components, functions, and complex logic should include JSDoc comments
+
+4. **UI Components**: All components should be responsive and properly aligned
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.

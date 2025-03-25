@@ -15,7 +15,9 @@ import {
 import { Skip } from '../types';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { DirectionsCarOutlined, ErrorOutlineOutlined, HomeOutlined } from '@mui/icons-material';
+import { ASSET_URLS } from '../constants/config';
 
+/** * Props for the SkipCard component */
 interface SkipCardProps {
   skip: Skip;
   isSelected?: boolean;
@@ -50,6 +52,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
       }}
       onClick={() => !isDisabled && onSelectSkip(skip)}
     >
+      {/* Selection indicator */}
       {isSelected && (
         <Box
           sx={{
@@ -76,10 +79,11 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
         </Box>
       )}
       
+      {/* Skip image */}
       <CardMedia
         component="img"
         height="160"
-        image="https://images.unsplash.com/photo-1590496793929-36417d3117de"
+        image={ASSET_URLS.SKIP_IMAGE}
         alt={`${skip.size} Yard Skip`}
         sx={{
           objectFit: 'cover',
@@ -89,6 +93,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
       
       <CardContent sx={{ flexGrow: 1, p: 2 }}>
         <Box>
+          {/* Skip size and price header */}
           <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
             <Typography 
               variant="h5" 
@@ -115,12 +120,22 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
             </Box>
           </Stack>
           
+          {/* Hire period information */}
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
             {skip.hire_period_days} day hire period
           </Typography>
         </Box>
         
-        <Stack direction="row" spacing={0.75} flexWrap="wrap" sx={{ mb: 1.5, gap: 0.75 }}>
+        {/* Skip feature tags */}
+        <Stack 
+          direction="row" 
+          spacing={0.75} 
+          flexWrap="wrap" 
+          sx={{ 
+            mb: 1.5, 
+            gap: 0.75 
+          }}
+        >
           {skip.allowed_on_road ? (
             <Chip 
               icon={<DirectionsCarOutlined fontSize="small" />}
@@ -172,6 +187,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
         </Stack>
       </CardContent>
       
+      {/* Action buttons */}
       <CardActions sx={{ p: 2, pt: 0 }}>
         {isDisabled ? (
           <Button 

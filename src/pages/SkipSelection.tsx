@@ -77,7 +77,7 @@ const SkipSelectionSkeleton = () => {
         <Grid container spacing={3}>
           {[1, 2, 3].map((item) => (
             <Grid item xs={12} sm={6} md={4} key={item}>
-              <SkipSkeleton />
+              <SkipSkeleton /> {/* Skeleton for loading state */}
             </Grid>
           ))}
         </Grid>
@@ -128,7 +128,7 @@ const SkipSelection: React.FC = () => {
     const loadSkips = async () => {
       setLoading(true);
       try {
-        const data = await fetchSkipsByLocation();
+        const data = await fetchSkipsByLocation(); // Fetch skips from the API
         setSkips(data);
         setLoading(false);
       } catch (error) {
@@ -166,7 +166,8 @@ const SkipSelection: React.FC = () => {
             boxShadow: theme.shadows[4],
             color: theme.palette.text.primary
           }}
-        >
+        > 
+         {/* Title of the page */}
           <Typography
             variant={isMobile ? "h6" : "h4"}
             gutterBottom
@@ -187,6 +188,7 @@ const SkipSelection: React.FC = () => {
               color: theme.palette.text.secondary
             }}
           >
+            {/* Description of the page */}
             Select the skip size that best suits your needs
           </Typography>
 
@@ -194,10 +196,10 @@ const SkipSelection: React.FC = () => {
 
 
         {loading ? (
-          <SkipSelectionSkeleton />
+          <SkipSelectionSkeleton /> // Skeleton for loading state 
         ) : (
           <>
-            <SkipGrid
+            <SkipGrid  // Grid component for displaying skips
               skips={skips}
               selectedSkip={selectedSkip}
               onSelectSkip={handleSelectSkip}
@@ -240,6 +242,7 @@ const SkipSelection: React.FC = () => {
                 </Typography>
               </Stack>
 
+              {/* Button to continue to delivery */}
               <Button
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
