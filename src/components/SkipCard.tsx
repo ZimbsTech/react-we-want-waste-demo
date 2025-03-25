@@ -129,7 +129,6 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected = false, onSelectS
         {/* Skip feature tags */}
         <Stack 
           direction="row" 
-          spacing={0.75} 
           flexWrap="wrap" 
           sx={{ 
             mb: 1.5, 

@@ -157,7 +157,7 @@ const SkipSelection: React.FC = () => {
         <Box
           sx={{
             textAlign: 'center',
-            mb: 6,
+            mb: isMobile ? 3 : 6,
             pt: 3,
             pb: 4,
             backgroundColor: theme.palette.mode === 'dark' ? '#1a2027' : '#f8f9fa',
@@ -173,7 +173,7 @@ const SkipSelection: React.FC = () => {
             gutterBottom
             sx={{
               fontWeight: 800,
-              mb: 1
+              mb: isMobile ? 0 : 1
             }}
           >
             Choose Your Skip Size

@@ -56,7 +56,7 @@ const SkipGrid: React.FC<SkipGridProps> = ({ skips, selectedSkip, onSelectSkip }
           >
             <CircleIcon sx={{ color: '#37B24D', fontSize: 10 }} />
             <Typography 
-              variant={theme.breakpoints.down('sm') ? "h5" : "h6"}
+              variant={theme.breakpoints.down('sm') ? "h6" : "h5"}
               sx={{ 
                 fontWeight: 600,
                 color: '#37B24D',
@@ -95,7 +95,7 @@ const SkipGrid: React.FC<SkipGridProps> = ({ skips, selectedSkip, onSelectSkip }
           >
             <CircleIcon sx={{ color: '#FF8A00', fontSize: 10 }} />
             <Typography 
-              variant="h5" 
+              variant={theme.breakpoints.down('sm') ? "h6" : "h5"}
               sx={{ 
                 fontWeight: 600,
                 color: '#FF8A00',
